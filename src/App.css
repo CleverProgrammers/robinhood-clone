@@ -3,9 +3,30 @@
 }
 
 .app {
-  /* display: flex; */
-  /* place-items: center; */
   background-color: lightgrey;
-  height: 100vh;
-  /* z-index: -1; */
+  height: fit-content;
+  place-items: center;
+}
+
+.app__header {
+}
+
+.app__body {
+  /* make background black later */
+  background-color: lightgrey;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  z-index: -1;
+}
+
+.app__container {
+  display: flex;
+  background-color: lightgray;
+  margin-top: 30px;
+  height: 150vh;
+  width: 60vw;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 50;
 }
