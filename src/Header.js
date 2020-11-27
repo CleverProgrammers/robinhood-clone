@@ -1,10 +1,13 @@
 import React from "react";
 import SearchOutlined from "@material-ui/icons/SearchOutlined";
+import "./Header.css";
 
-function Layout() {
+function Header() {
   return (
-    <div className="header">
-      <h1> Logo </h1>
+    <div className="header__wrapper">
+      <div className="header__logo">
+        <h3> Robin Hood </h3>
+      </div>
       <div clasName="header__search">
         <div className="header__searchContainer">
           <SearchOutlined />
@@ -22,4 +25,4 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Header;

@@ -1,0 +1,6 @@
+.stats {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+}
