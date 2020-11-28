@@ -8,7 +8,7 @@ function Header() {
       <div className="header__logo">
         <h3> Robin Hood </h3>
       </div>
-      <div clasName="header__search">
+      <div className="header__search">
         <div className="header__searchContainer">
           <SearchOutlined />
           <input placeholder="Search" type="text" />
