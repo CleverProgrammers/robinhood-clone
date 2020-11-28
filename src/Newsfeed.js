@@ -3,6 +3,7 @@ import "./Newsfeed.css";
 import { Avatar } from "@material-ui/core";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
+import LineGraph from "./LineGraph";
 
 function Newsfeed() {
   const [popularTopics, setTopics] = useState([
@@ -47,7 +48,7 @@ function Newsfeed() {
             <p> $142.90 (-0,12) Today </p>
           </div>
           <div className="newsfeed__chart">
-            <h1> CHART </h1>
+            <LineGraph />
           </div>
         </div>
         <div className="newsfeed__buying__section">
@@ -108,6 +109,7 @@ function Newsfeed() {
                 <p>Stocks making the biggest moves today</p>
                 <p> Show More</p>
               </div>
+              {/* use Card / CardContent @material-uit */}
               <div className="newsfeed__topmovers__cards__container">
                 {cards.map((card) => (
                   <div className="newsfeed__topmovers__card">

@@ -3,7 +3,7 @@
 }
 
 .app {
-  background-color: lightgrey;
+  background-color: black;
   /* height: fit-content; */
   place-items: center;
 }
@@ -13,7 +13,7 @@
 
 .app__body {
   /* make background black later */
-  background-color: lightgrey;
+  background-color: black;
   margin: 0;
   display: grid;
   place-items: center;
@@ -22,7 +22,7 @@
 
 .app__container {
   display: flex;
-  background-color: lightgray;
+  background-color: black;
   margin-top: 30px;
   width: 60vw;
   box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7);

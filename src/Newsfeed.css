@@ -2,27 +2,26 @@
   flex: 0.7;
   display: flex;
   flex-direction: column;
-  background-color: purple;
+  background-color: black;
   padding: 30px;
 }
 
 .newsfeed__container {
   flex: 1;
-  background-color: lightblue;
-  padding: 20px;
+  background-color: black;
   font-size: 12px;
 }
 
 .newsfeed__chart__section {
-  height: 40vh;
-  background-color: blue;
-  border-bottom: 2px solid lightgray;
+  padding: 20px 0px 20px 0px;
+  background-color: black;
+  border-bottom: 1px solid #3b4754;
 }
 .newsfeed__buying__section {
   padding: 20px 0px 20px 0px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 1px solid #3b4754;
 }
 
 .newsfeed__market__section {
@@ -33,7 +32,7 @@
   height: 10vh;
   padding: 20px;
   border-radius: 10px;
-  border: 2px solid red;
+  border: 1px solid #3b4754;
 }
 
 .newsfeed__popularlists__section {
@@ -67,17 +66,17 @@
   width: fit-content;
   height: fit-content;
   background-color: black;
-  border: 1px solid lightgray;
+  border: 1px solid #3b4754;
   border-radius: 20px;
 }
 
 .newsfeed__articles__section {
-  background-color: lightcoral;
+  background-color: black;
 }
 
 .newsfeed__articles__header {
   padding: 20px 0px 10px 0px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #3b4754;
 }
 .newsfeed__article {
   flex-direction: column;
@@ -99,12 +98,12 @@
   justify-content: space-between;
   padding-right: 30px;
   padding-bottom: 20px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #3b4754;
 }
 
 .newsfeed__topmovers__section {
   padding: 20px 0px 10px 0px;
-  background-color: green;
+  background-color: black;
   height: fit-content;
 }
 .newsfeed__topmovers__intro__details {
@@ -126,7 +125,7 @@
 }
 
 .newsfeed__topmovers__card {
-  background-color: pink;
+  background-color: black;
   color: white;
   padding: 20px 20px 20px 20px;
   margin-left: 12px;
