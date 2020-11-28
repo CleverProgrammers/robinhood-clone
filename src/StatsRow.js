@@ -1,7 +1,7 @@
 import React from "react";
 
 function StatsRow(props) {
-  console.log(props, "what is in props here?");
+  //   console.log(props, "what is in props here?");
   return (
     <div className="row">
       <div className="row__intro">

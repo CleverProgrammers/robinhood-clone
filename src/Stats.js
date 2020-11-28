@@ -5,43 +5,70 @@ import StatsRow from "./StatsRow";
 import { key } from "./api";
 import axios from "axios";
 
+const BASE_URL =
+  "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=";
+
+const KEY_URL = `&apikey=${key}`;
+
+const getStocksData = (stock) => {
+  let stocksData = [];
+  axios
+    .get(`${BASE_URL}${stock}${KEY_URL}`)
+    .then((res) => {
+      const { data } = res;
+      console.log(data, "what is in data?");
+
+      // data has two keys
+      // 1. Meta Data
+      // 2. Time Series (Daily)
+
+      console.log(Object.keys(data["Time Series (Daily)"]).length);
+
+      let stocksRow = stocksData.push({
+        name: data["Meta Data"]["2. Symbol"],
+      });
+      // 1 object per stock
+    })
+    .catch((error) => {
+      console.error("Error", error.message);
+    });
+};
+
 function Stats() {
-  const [stocksData, setStocksData] = useState([
-    "APPL",
-    "MSFT",
-    "AMD",
-    "FB",
-    "TSLA",
-    "SHOP",
-    "EXAS",
-    "NVAX",
-  ]);
+  const [stocksData, setStocksData] = useState([]);
   const [data, setResponseData] = useState([]);
 
   useEffect(() => {
-    // const url = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols="AAPL"&apikey=${key}`;
+    const stocksList = ["APPL", "MSFT", "TSLA", "FB"];
 
-    const url =
-      "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=UBFI68B0MJWJ7CG0";
+    let stocksData = stocksList.map((stock) => {
+      getStocksData(stock);
+    });
+    setStocksData(stocksData);
+  }, []);
 
-    axios
-      .get(url)
-      .then((res) => {
-        console.log(res.data);
-        // let stocks = _.flattenDeep(
-        //   Array.from(res.data["Stock Quotes"]).map((stock) => [
-        //     {
-        //       symbol: stock["1. symbol"],
-        //       price: stock["2. price"],
-        //       volume: stock["3. volume"],
-        //       timestamp: stock["4. timestamp"],
-        //     },
-        //   ])
-        // );
-        // console.log(stocks);
-      })
-      .catch((error) => console.log(error));
-  }, [stocksData]);
+  //   let stocksData = [];
+
+  //       axios.all(stocksList
+  //         .map((stock) => (
+  //           axios.get()`https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol=${stock}&apikey=${key}`);
+  //       )
+  //       .then((res) => {
+  //         console.log(res.data);
+  //         let response = res.data;
+  //         let stockName = res.data["Meta Data"]["2. Symbol"];
+  //         let stockDailyNumbers = response["Time Series (Daily)"];
+
+  //         // stocksData.push({
+  //         //   symbol: stockName,
+  //         //   volume:
+
+  //         // });
+  //       });
+  //     })
+  //     .catch((error) => console.log(error));
+  //   setStocksData(stocksData);
+  // }, [stocksData]);
 
   return (
     <div className="stats">
@@ -54,7 +81,7 @@ function Stats() {
           <div className="stats__rows">
             {stocksData.map((stock) => (
               <StatsRow
-                name="APPL"
+                name={"APPL"}
                 volume={3000}
                 chartData="helloChartData"
                 price={116}
@@ -79,3 +106,8 @@ export default Stats;
 //   "Monero",
 //   "Polkadot",
 // ]);
+
+// const url = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols="AAPL"&apikey=${key}`;
+
+// const url =
+//   "https://www.alphavantage.co/query?function=OVERVIEW&symbol=AAPL&apikey=UBFI68B0MJWJ7CG0";
