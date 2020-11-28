@@ -2,5 +2,42 @@
   flex: 0.3;
   display: flex;
   flex-direction: column;
-  background-color: blue;
+  background-color: lightgreen;
+  padding: 30px;
+}
+
+.stats__container {
+  flex-direction: column;
+  flex: 1;
+  background-color: #3b4754;
+  border-radius: 5px;
+}
+
+.stats__content {
+  padding: 20px;
+  font-size: 12px;
+}
+
+.stats__header {
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 20px 10px 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.row__intro > h1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.row__intro > p {
+  font-size: 12px;
 }
