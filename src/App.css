@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+body {
+  background-color: black;
+}
+
 .app {
   background-color: black;
   /* height: fit-content; */
