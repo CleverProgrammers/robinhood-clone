@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Newsfeed.css";
+import Article from "./Article";
 import { Avatar } from "@material-ui/core";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
@@ -8,6 +9,7 @@ import Chip from '@material-ui/core/Chip';
 import TimeLine from './TimeLine'
 import FaceIcon from '@material-ui/icons/Face';
 import DoneIcon from '@material-ui/icons/Done';
+import TopMover from "./TopMover";
 
 
 function Newsfeed() {
@@ -27,10 +29,10 @@ function Newsfeed() {
   const [seed, setSeed] = useState("");
 
   const [articles, setArticles] = useState([
-    "Business Insider",
-    "MarketWatch",
-    "Reuters",
-    "VentureBeat",
+    "TSLA",
+    "APPL",
+    "FB",
+    "AMZN",
   ]);
 
   const [cards, setCards] = useState([
@@ -89,27 +91,7 @@ function Newsfeed() {
           <div className="newsfeed__articles__header">
             <h1>News</h1>
           </div>
-          <div className="newsfeed__article">
-            <div className="newsfeed__article__title">
-              <FlashOnIcon />
-              <div className="newsfeed__article__source">
-                <p>The Wallstreet Journal</p>
-              </div>
-              <MoreHorizIcon />
-            </div>
-            <div className="newsfeed__article__content">
-              <div className="newsfeed__article__paragraph">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
-                </p>
-              </div>
-              <div className="newsfeed__article__image">
-                <h2>Image Unsplash</h2>
-              </div>
-            </div>
-          </div>
+          <Article genre="general"/>
           <div className="newsfeed__topmovers__section">
             <div className="newsfeed__topmovers__intro">
               <h1>Top Movers</h1>
@@ -120,41 +102,13 @@ function Newsfeed() {
               {/* use Card / CardContent @material-uit */}
               <div className="newsfeed__topmovers__cards__container">
                 {cards.map((card) => (
-                  <div className="newsfeed__topmovers__card">
-                    <div className="newsfeed__topmovers__card_name">
-                      <p> {card}</p>
-                    </div>
-                    <div className="newsfeed__topmovers__card__numbers">
-                      <h1>$15.20</h1>
-                      <p>+43.32%</p>
-                    </div>
-                  </div>
+                  <TopMover card={card} />
                 ))}
               </div>
             </div>
           </div>
-          {articles.map((article) => (
-            <div className="newsfeed__article">
-              <div className="newsfeed__article__title">
-                <FlashOnIcon />
-                <div className="newsfeed__article__source">
-                  <p>{article}</p>
-                </div>
-                <MoreHorizIcon />
-              </div>
-              <div className="newsfeed__article__content">
-                <div className="newsfeed__article__paragraph">
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s.
-                  </p>
-                </div>
-                <div className="newsfeed__article__image">
-                  <h2>Image Unsplash</h2>
-                </div>
-              </div>
-            </div>
+          {articles.map((stock) => (
+            <Article genre="company" stock={stock}/>
           ))}
         </div>
       </div>

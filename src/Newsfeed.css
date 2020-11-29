@@ -80,7 +80,7 @@
   padding: 20px 0px 10px 0px;
   border-bottom: 1px solid #3b4754;
 }
-.newsfeed__article {
+.newsfeed__articles {
   flex-direction: column;
 }
 .newsfeed__article__title {
