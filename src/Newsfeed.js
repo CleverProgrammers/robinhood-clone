@@ -4,6 +4,11 @@ import { Avatar } from "@material-ui/core";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import FlashOnIcon from "@material-ui/icons/FlashOn";
 import LineGraph from "./LineGraph";
+import Chip from '@material-ui/core/Chip';
+import TimeLine from './TimeLine'
+import FaceIcon from '@material-ui/icons/Face';
+import DoneIcon from '@material-ui/icons/Done';
+
 
 function Newsfeed() {
   const [popularTopics, setTopics] = useState([
@@ -49,6 +54,7 @@ function Newsfeed() {
           </div>
           <div className="newsfeed__chart">
             <LineGraph />
+            <TimeLine />
           </div>
         </div>
         <div className="newsfeed__buying__section">
@@ -68,12 +74,14 @@ function Newsfeed() {
           </div>
           <div className="newsfeed_popularlists_badges">
             {popularTopics.map((topic) => (
-              <div className="topic__badge">
-                <Avatar
-                  src={`https://avatars.dicebear.com/api/human/${seed}.svg`}
-                />
-                {topic}
-              </div>
+              <Chip 
+                className="topic__badge"
+                variant="outlined"
+                label={topic}
+                avatar={<Avatar
+                  src={`https://avatars.dicebear.com/api/human/${topic}.svg`}
+                />} 
+              />
             ))}
           </div>
         </div>

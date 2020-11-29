@@ -2,20 +2,20 @@
   flex: 0.3;
   display: flex;
   flex-direction: column;
-  background-color: black;
-  padding: 30px;
+  padding: 0px 30px 30px 30px;
+  
 }
 
 .stats__container {
   flex-direction: column;
   flex: 1;
-  background-color: #3b4754;
+  background-color: #1E2023;
   border-radius: 5px;
+  border: 1px solid #42494D;
 }
 
 .stats__content {
-  padding: 20px;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .stats__header {
@@ -23,21 +23,49 @@
   font-size: 16px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid darkgray;
+  border-bottom: 1px solid #42494D;
   padding: 20px 20px 10px 20px;
+  font-weight: 500;
+}
+
+.stats-lists {
+  height: 52px;
+  border-top: 1px solid #42494D;
+  padding: 4px 20px 0px 20px;
 }
 
 .row {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  height: 60px;
+  padding: 0 24px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.row:hover {
+  background-color: #31363A;
 }
 
 .row__intro > h1 {
   font-size: 16px;
   font-weight: bold;
+  padding-bottom: 2px;
 }
 
 .row__intro > p {
   font-size: 12px;
+}
+
+.row__numbers {
+  text-align: end;
+  font-weight: 500;
+}
+
+.row__price {
+  padding-bottom: 4px;
+}
+
+.row__percentage {
+  color: #5AC53B;
 }

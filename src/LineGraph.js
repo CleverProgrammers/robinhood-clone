@@ -1,114 +1,70 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 
-function LineGraph() {
-  const [data, setData] = useState([
-    {
-      x: "January",
-      y: 100,
+const options = {
+  legend: {
+    display: false,
+  },
+  hover: {
+    intersect: false
+  },
+  elements: {
+    line: {
+      tension: 0
     },
-    {
-      x: "February",
-      y: 100,
+    point: {
+      radius: 0,
     },
-    {
-      x: "1W",
-      y: 150,
+  },
+  maintainAspectRatio: false,
+  tooltips: {
+    mode: "index",
+    intersect: false,
+    callbacks: {
     },
-    {
-      x: "3M",
-      y: 250,
-    },
-    {
-      x: "1Y",
-      y: 800,
-    },
-  ]);
-
-  const options = {
-    legend: {
-      display: false,
-    },
-    elements: {
-      point: {
-        radius: 0,
+  },
+  scales: {
+    xAxes: [
+      {
+        type: "time",
+        time: {
+          format: "MM/DD/YY",
+          tooltipFormat: "ll",
+        },
+        ticks: {
+          display: false,
+        }
       },
-    },
-    maintainAspectRatio: false,
-    tooltips: {
-      mode: "index",
-      intersect: false,
-      //   callbacks: {
-      //     label: function (tooltipItem, data) {
-      //       return numeral(tooltipItem.value).format("+0,0");
-      //     },
-      //   },
-    },
-    scales: {
-      xAxes: [
-        {
-          type: "time",
-          time: {
-            format: "MM",
-            unit: "month",
-            parser: "MM",
-            displayFormats: { month: "MM/YY" },
-            max: "2020-11-25",
-            min: "2020-01-01",
-          },
+    ],
+    yAxes: [
+      {
+        gridLines: {
+          display: false,
         },
-      ],
-      yAxes: [
-        {
-          gridLines: {
-            display: false,
-          },
-          //   ticks: {
-          //     // Include a dollar sign in the ticks
-          //     callback: function (value, index, values) {
-          //       return numeral(value).format("0a");
-          //     },
-          //   },
+        ticks: {
+          display: false,
         },
-      ],
-    },
-  };
+      },
+    ],
+  },
+};
 
-  //   const buildChartData = (data, casesType) => {
-  //     let chartData = [];
-  //     let lastDataPoint;
-  //     for (let date in data.cases) {
-  //       if (lastDataPoint) {
-  //         let newDataPoint = {
-  //           x: date,
-  //           y: data[casesType][date] - lastDataPoint,
-  //         };
-  //         chartData.push(newDataPoint);
-  //       }
-  //       lastDataPoint = data[casesType][date];
-  //     }
-  //     return chartData;
-  //   };
+function LineGraph({ casesType }) {
+  const [data, setData] = useState({});
 
-  //   function LineGraph({ casesType }) {
-  //     const [data, setData] = useState({});
-
-  //     useEffect(() => {
-  //       const fetchData = async () => {
-  //         await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
-  //           .then((response) => {
-  //             return response.json();
-  //           })
-  //           .then((data) => {
-  //             let chartData = buildChartData(data, casesType);
-  //             setData(chartData);
-  //             console.log(chartData);
-  //             // buildChart(chartData);
-  //           });
-  //       };
-
-  //       fetchData();
-  //     }, [casesType]);
+  useEffect(() => {
+    
+    let data = [];
+    let value = 50;
+    for(var i = 0; i < 366; i++){
+      let date = new Date();
+      date.setHours(0,0,0,0);
+      date.setDate(i);
+      value += Math.round((Math.random() < 0.5 ? 1 : 0) * Math.random() * 10);
+      data.push({x: date, y: value});
+    }   
+    setData(data)
+  }, []);
 
   return (
     <div>
@@ -117,8 +73,16 @@ function LineGraph() {
           data={{
             datasets: [
               {
-                backgroundColor: "white",
-                borderColor: "red",
+                type: 'line',
+                backgroundColor: "black",
+                borderColor: "#5AC53B",
+                borderWidth: 2,
+                pointBorderColor: 'rgba(0, 0, 0, 0)',
+                pointBackgroundColor: 'rgba(0, 0, 0, 0)',
+                pointHoverBackgroundColor: '#5AC53B',
+                pointHoverBorderColor: '#000000',
+                pointHoverBorderWidth: 4,
+                pointHoverRadius: 6,
                 data: data,
               },
             ],

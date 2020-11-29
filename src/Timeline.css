@@ -1,0 +1,44 @@
+.timeline__container {
+    display:flex;
+    border-bottom: 1px solid #3b4754;
+}
+.timeline__wrapper {
+    display:flex;    
+    align-items: center;
+    padding-bottom: 0px;
+
+}
+
+.timeline__live {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.timeline__buttons__container {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 0px;
+}
+.timeline__button {
+    font-weight: bold;
+    padding: 10px 10px 20px 10px;
+    cursor: pointer;
+}
+
+.timeline__button:hover {
+    color: #5AC53B;
+}
+
+.timeline__button.active {
+    color: #5AC53B;
+}
+
+.timeline__button.active {
+    border-bottom: 2px solid #5AC53B;
+}
+
+/* .timeline__button: hover {
+    border-bottom: 2px solid green; 
+} */
