@@ -5,22 +5,14 @@ import {key} from "./api";
 import axios from "axios";
 
 const BASE_URL = "https://finnhub.io/api/v1/news?category=general";
-const URL_COMPANY = "https://finnhub.io/api/v1/company-news?symbol=";
-const URL_COMPANY_TIMEFRAME = "&from=2020-11-21&to=2020-11-28";
 
 function Article(props) {
     const [article, setArticle] = useState({});
-    const [articlesData, setArticlesData] = useState();
-
    
     useEffect(() => {
         if (props) {
-            let { genre, stock} = props;
-            let url = genre == "general" ? BASE_URL : `${URL_COMPANY}${stock}${URL_COMPANY_TIMEFRAME}`;
-            
-            console.log(`${URL_COMPANY}${stock}${URL_COMPANY_TIMEFRAME}`, 'HELLO');
             return axios
-              .get(url)
+              .get(BASE_URL)
               .then((res) => {
                   console.log(res.data, 'res data');
                   let article = res.data[0];
@@ -31,9 +23,6 @@ function Article(props) {
               });
             }
         },[]);
- 
-  
-      
 
     return (
     <div className="newsfeed__articles">

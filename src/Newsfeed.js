@@ -7,9 +7,6 @@ import FlashOnIcon from "@material-ui/icons/FlashOn";
 import LineGraph from "./LineGraph";
 import Chip from '@material-ui/core/Chip';
 import TimeLine from './TimeLine'
-import FaceIcon from '@material-ui/icons/Face';
-import DoneIcon from '@material-ui/icons/Done';
-import TopMover from "./TopMover";
 
 
 function Newsfeed() {
@@ -27,20 +24,6 @@ function Newsfeed() {
   ]);
 
   const [seed, setSeed] = useState("");
-
-  const [articles, setArticles] = useState([
-    "TSLA",
-    "APPL",
-    "FB",
-    "AMZN",
-  ]);
-
-  const [cards, setCards] = useState([
-    "Eco Energy",
-    "Shift Technologies",
-    "Appian",
-    "Slack",
-  ]);
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
@@ -72,7 +55,7 @@ function Newsfeed() {
         <div className="newsfeed__popularlists__section">
           <div className="newsfeed__popularlists__intro">
             <h1>Popular lists</h1>
-            <p> Show More</p>
+            <p>Show More</p>
           </div>
           <div className="newsfeed_popularlists_badges">
             {popularTopics.map((topic) => (
@@ -86,30 +69,6 @@ function Newsfeed() {
               />
             ))}
           </div>
-        </div>
-        <div className="newsfeed__articles__section">
-          <div className="newsfeed__articles__header">
-            <h1>News</h1>
-          </div>
-          <Article genre="general"/>
-          <div className="newsfeed__topmovers__section">
-            <div className="newsfeed__topmovers__intro">
-              <h1>Top Movers</h1>
-              <div className="newsfeed__topmovers__intro__details">
-                <p>Stocks making the biggest moves today</p>
-                <p> Show More</p>
-              </div>
-              {/* use Card / CardContent @material-uit */}
-              <div className="newsfeed__topmovers__cards__container">
-                {cards.map((card) => (
-                  <TopMover card={card} />
-                ))}
-              </div>
-            </div>
-          </div>
-          {articles.map((stock) => (
-            <Article genre="company" stock={stock}/>
-          ))}
         </div>
       </div>
     </div>
