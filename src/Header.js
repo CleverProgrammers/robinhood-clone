@@ -19,8 +19,6 @@ function Header() {
         <a href="/">Free Stocks</a>
         <a href="/">PortFolio</a>
         <a href="/">Cash</a>
-        <a href="/">Messages</a>
-        <a href="/">Account</a>
       </div>
     </div>
   );

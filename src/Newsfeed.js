@@ -11,17 +11,11 @@ import TimeLine from './TimeLine'
 
 function Newsfeed() {
   const [popularTopics, setTopics] = useState([
-    "Technology",
-    "Top Movies",
-    "Upcoming Earnings",
-    "Crypto",
-    "Cannabis",
-    "Healthcare Supplies",
-    "Index ETFs",
-    "Technology",
-    "China",
-    "Pharma",
-  ]);
+    "Automobile",
+    "Retail",
+    "Pharmaceuticals",
+    "Food",
+   ]);
 
   const [seed, setSeed] = useState("");
 
@@ -34,7 +28,7 @@ function Newsfeed() {
       <div className="newsfeed__container">
         <div className="newsfeed__chart__section">
           <div className="newsfeed_price_asset">
-            <h1> $114,656,84</h1>
+            <h1> $420,000.69</h1>
             <p> $142.90 (-0,12) Today </p>
           </div>
           <div className="newsfeed__chart">
