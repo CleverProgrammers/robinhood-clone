@@ -43,7 +43,7 @@ function Newsfeed() {
         <div className="newsfeed__market__section">
           <div className="newsfeed__market__box">
             <p> Markets Closed</p>
-            <h1> Happy Thanksgiving</h1>
+            <h1> Take a break!</h1>
           </div>
         </div>
         <div className="newsfeed__popularlists__section">

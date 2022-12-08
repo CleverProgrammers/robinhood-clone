@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Header";
 import NewsFeed from "./Newsfeed";
 import Stats from "./Stats";
+import Signup from './signup.js';
 
 function App() {
   return (

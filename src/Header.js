@@ -2,6 +2,7 @@ import React from "react";
 import SearchOutlined from "@material-ui/icons/SearchOutlined";
 import "./Header.css";
 import Logo from './robinhood.svg'
+import Signup from './signup.js'
 
 function Header() {
   return (
@@ -19,6 +20,7 @@ function Header() {
         <a href="/">Free Stocks</a>
         <a href="/">PortFolio</a>
         <a href="/">Cash</a>
+        <a href="/signup">Sign Up</a>
       </div>
     </div>
   );
