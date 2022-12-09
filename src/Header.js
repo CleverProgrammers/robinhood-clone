@@ -19,8 +19,8 @@ function Header() {
       <div className="header__menuItems">
         <a href="/">Free Stocks</a>
         <a href="/">PortFolio</a>
-        <a href="/">Cash</a>
-        <a href="/signup">Sign Up</a>
+        <a href="/bank.html">Cash</a>
+        <a href="/">Sign Up</a>
       </div>
     </div>
   );
