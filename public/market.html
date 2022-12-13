@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Market</title>
+    <link rel="stylesheet" href="market.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="#home" id="navbar__logo">Stockrain</a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span> <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a href="/" class="navbar__links" id="home-page">Portfolio</a>
+          </li>
+          <li class="navbar__item">
+            <a href="#about" class="navbar__links" id="about-page">Market</a>
+          </li>
+          <li class="navbar__item">
+            <a href="bank.html" class="navbar__links" id="services-page"
+              >Bank</a
+            >
+          </li>
+          <li class="navbar__btn">
+            <a href="#sign-up" class="button" id="signup">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+      <div class="hero__container">
+        <h1 class="hero__heading">Choose your <span>Industry</span></h1>
+        <a href="#services">
+          <button class="btn_1" onclick="updateOptions()">Automobiles</button>
+        </a>
+        <a href="#services">
+          <button class="btn_2" onclick="updateOptions1()">Retail </button>
+        </a>
+        <a href="#services">
+          <button class="btn_3" onclick="updateOptions2()">Food </button>
+        </a>
+        <a href="#services">
+          <button class="btn_4" onclick="updateOptions3()">Pharmacueticals </button>
+        </a> 
+        </div>
+      </div>
+      
+
+      <script>
+        function updateOptions() {
+          // Get the select element
+          var select = document.getElementById("mySelect");
+        
+          // Clear the existing options
+          select.options.length = 0;
+        
+          // Add new options
+          select.options.add(new Option("BMW"));
+          select.options.add(new Option("Tesla"));
+          select.options.add(new Option("GM"));
+          select.options.add(new Option("Mercedes"));
+          select.options.add(new Option("Tata Motors"));
+        }
+        </script>
+
+<script>
+  function updateOptions1() {
+    // Get the select element
+    var select = document.getElementById("mySelect");
+  
+    // Clear the existing options
+    select.options.length = 0;
+  
+    // Add new options
+    select.options.add(new Option("DMart"));
+    select.options.add(new Option("Ikea"));
+    select.options.add(new Option("Best Buy"));
+    select.options.add(new Option("Home Depot"));
+    select.options.add(new Option("Target"));
+  }
+  </script>
+
+<script>
+  function updateOptions2() {
+    // Get the select element
+    var select = document.getElementById("mySelect");
+  
+    // Clear the existing options
+    select.options.length = 0;
+  
+    // Add new options
+    select.options.add(new Option("Pepsi"));
+    select.options.add(new Option("Mcdonalds"));
+    select.options.add(new Option("Nestle"));
+    select.options.add(new Option("Britannia"));
+    select.options.add(new Option("Starbucks"));
+  }
+  </script>
+
+<script>
+  function updateOptions3() {
+    // Get the select element
+    var select = document.getElementById("mySelect");
+  
+    // Clear the existing options
+    select.options.length = 0;
+  
+    // Add new options
+    select.options.add(new Option("Cipla"));
+    select.options.add(new Option("Dr. Reddys"));
+    select.options.add(new Option("Pfizer"));
+    select.options.add(new Option("BioNtech"));
+    select.options.add(new Option("Sun Pharma"));
+  }
+  </script>
+      
+      <div class="services" id="services">
+        <div class="services__container">
+          <select id="mySelect" class="drop_down">
+            <div class="dropdown-content">
+            <option>Select Industry</option>
+            </div>
+          </select>
+          <form>
+            <input type="text" id="myTextBox" name="myTextBox" class="txtbox" placeholder="Input Amount"><br><br>
+            <button class="btn_5" type="submit">Buy </button>
+          <button class="btn_6" type="submit">Sell</button>
+          </form>
+    <script src="app.js"></script>
+    <script src="market.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="header.js"></script>
+  </body>
+</html>
+
+
